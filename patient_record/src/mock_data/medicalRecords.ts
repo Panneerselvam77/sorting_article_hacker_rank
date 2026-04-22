@@ -1,4 +1,4 @@
-const medical_records = [
+export const medical_records: any = [
   {
     id: "1",
     data: [
