@@ -1,4 +1,6 @@
-export const medical_records: any = [
+import type { RecordGroup } from "../component/MedicalRecord";
+
+export const medical_records: RecordGroup[] = [
   {
     id: "1",
     data: [

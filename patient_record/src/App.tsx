@@ -1,13 +1,16 @@
+import { useState, type JSX } from "react";
 import "./App.css";
 import Record from "./component/Record";
 import Search from "./component/Search";
 
-function App() {
+function App(): JSX.Element {
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
   return (
-    <div>
+    <div className="app">
       <h1>Patient Record</h1>
-      <Search />
-      <Record />
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Record searchTerm={searchTerm} />
     </div>
   );
 }

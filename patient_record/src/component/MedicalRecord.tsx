@@ -1,24 +1,29 @@
 // Interface for a single medical record
-interface Vitals {
+
+export interface Vitals {
   bloodPressureDiastole: number;
   bloodPressureSystole: number;
   pulse: number;
   breathingRate: number;
   bodyTemperature: number;
 }
-interface Diagnosis {
+
+export interface Diagnosis {
   id: number;
   name: string;
   severity: number;
 }
-interface Doctor {
+
+export interface Doctor {
   id: number;
   name: string;
 }
-interface Meta {
+
+export interface Meta {
   height: number;
   weight: number;
 }
+
 export interface MedicalRecord {
   id: number;
   timestamp: number;
@@ -29,4 +34,10 @@ export interface MedicalRecord {
   userName: string;
   userDob: string;
   meta: Meta;
+}
+
+// Type for the top-level grouped record shape from mock data
+export interface RecordGroup {
+  id: string;
+  data: MedicalRecord[];
 }
