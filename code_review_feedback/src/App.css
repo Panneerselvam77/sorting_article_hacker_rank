@@ -1,0 +1,80 @@
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between cards */
+  justify-content: center; /* center cards */
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Card wrapper (optional enhancement if needed) */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Voting buttons container */
+.hand-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 0;
+  padding: 10px 0;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+/* Individual vote button */
+.hand-box {
+  width: 60px;
+  height: 60px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* makes it circular */
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects */
+.hand-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Active click effect */
+.hand-box:active {
+  transform: scale(0.95);
+}
+
+/* Optional: color overrides */
+.hand-box.up {
+  background-color: #4caf50; /* green */
+  color: white;
+}
+
+.hand-box.down {
+  background-color: #f44336; /* red */
+  color: white;
+}
+
+/* Vote text styling */
+.card-text p {
+  margin: 5px 0;
+  font-weight: 500;
+}
