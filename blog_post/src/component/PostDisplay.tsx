@@ -1,24 +1,26 @@
 import type React from "react";
-import type { InputValue } from "./Home";
+import type { Post } from "./Home";
 
-interface InputProps {
-  arrValue: InputValue[];
-  handleDeletePost: (index: string) => void;
+interface PostDisplayProps {
+  posts: Post[];
+  handleDeletePost: (id: string) => void;
 }
 
-const PostDisplay: React.FC<InputProps> = ({ arrValue, handleDeletePost }) => {
+const PostDisplay: React.FC<PostDisplayProps> = ({
+  posts,
+  handleDeletePost,
+}) => {
   return (
     <div>
-      <h1>Post Display</h1>
-      {arrValue.map((post, index) => (
-        <div className="post-container" key={index}>
-          <div key={index}>
-            <h2>{post.title}</h2>
-            <p>{post.description}</p>
-            <button onClick={() => handleDeletePost(post.title)}>
-              Delete Post
-            </button>
-          </div>
+      <h2>Post Display</h2>
+      {posts.length === 0 && <p>No posts yet. Create one above!</p>}
+      {posts.map((post) => (
+        // Use stable unique `id` as key instead of array index.
+        // Index keys cause React to mis-identify elements when the list order changes (e.g. on delete).
+        <div className="post-container" key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.description}</p>
+          <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
         </div>
       ))}
     </div>
